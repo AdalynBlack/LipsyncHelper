@@ -15,4 +15,4 @@ This is a simple script which automatically converts Oculus Lipsync data into a 
 7. If all went well, you should see the messages "Beginning Conversion..." and "Conversion complete!" back to back with no errors inbetween
 
 ## Issues
-If you have any issues, report the issue on github
+If you have any issues, report the issue on [Github](https://github.com/TonyGamer/LipsyncHelper/issues)
