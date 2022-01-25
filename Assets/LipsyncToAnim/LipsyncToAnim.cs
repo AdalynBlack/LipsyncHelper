@@ -161,7 +161,7 @@ public class LipsyncToAnim : MonoBehaviour
             AnimationUtility.SetEditorCurve(animationClip, editorCurves[i], curve);
         }
 
-        Debug.Log(keyframes + "keyframes were generated");
+        Debug.Log(keyframes + " keyframes were generated");
         Debug.Log("Conversion complete!");
     }
 
