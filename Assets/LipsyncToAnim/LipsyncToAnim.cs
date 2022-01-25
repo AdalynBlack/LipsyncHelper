@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 [ExecuteInEditMode]
 public class LipsyncToAnim : MonoBehaviour
 {
@@ -176,4 +176,4 @@ public class LipsyncToAnim : MonoBehaviour
         return path;
     }
 }
-//#endif
+#endif

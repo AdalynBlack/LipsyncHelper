@@ -434,7 +434,7 @@ MonoBehaviour:
   minValue: 15
   gain: 100
   decimateValue: 10000
-  optimize: 0
+  optimize: 1
   convert: 0
 --- !u!95 &1875710400
 Animator:
