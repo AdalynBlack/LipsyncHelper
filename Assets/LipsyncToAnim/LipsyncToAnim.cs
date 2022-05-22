@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-//#if UNITY_EDITOR
-//[ExecuteInEditMode]
+#if UNITY_EDITOR
+[ExecuteInEditMode]
 public class LipsyncToAnim : MonoBehaviour
 {
     [Header("Required Assets")]
@@ -180,4 +180,4 @@ public class LipsyncToAnim : MonoBehaviour
         throw new KeyNotFoundException("Unable to locate parent from child");
     }
 }
-//#endif
+#endif
