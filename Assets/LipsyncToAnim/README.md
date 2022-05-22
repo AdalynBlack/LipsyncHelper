@@ -6,8 +6,8 @@ This is a simple script which automatically converts Oculus Lipsync data into a 
 - Use the [lipsync precompute feature](https://developer.oculus.com/documentation/unity/audio-ovrlipsync-precomputed-unity/) to generate the required OVRLipSyncSequence file
 
 ## Converting the lipsync data
-1. Click on the avatar you wish to animate
-2. Click "Add Component" and add the component "Lipsync To Anim"
+1. Select the avatar you wish to animate. Select the gameobject with the animator component for the script to function
+2. Add the component "Lipsync To Anim"
 3. Drag the audio into "Audio Clip"
 4. Drag the animation clip you wish to add lipsync to into "Animation Clip" (create a new animation clip if you don't want to modify one)
 5. Drag the mesh you wish to animate to the "Mouth Object" section

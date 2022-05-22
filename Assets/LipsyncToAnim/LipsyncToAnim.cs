@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-#if UNITY_EDITOR
-[ExecuteInEditMode]
+//#if UNITY_EDITOR
+//[ExecuteInEditMode]
 public class LipsyncToAnim : MonoBehaviour
 {
     [Header("Required Assets")]
@@ -61,9 +61,10 @@ public class LipsyncToAnim : MonoBehaviour
         int keyframes = 0;
 
         Debug.Log("Beginning Conversion...");
+        
+        string path = GetRelativePath(transform, mouthObject.transform);
 
-        string path = GetGameObjectPath(mouthObject.transform) ?? "";
-
+        
         MatchCollection mc = Regex.Matches(path, @"\b(?<=" + this.gameObject.name + @"\/)[\s\S]*");
 
         if (mc.Count == 0)
@@ -74,6 +75,8 @@ public class LipsyncToAnim : MonoBehaviour
             path = mc[0].Value;
             Debug.Log("Path: " + path);
         }
+
+        Debug.Log("Path: " + path);
 
         OVRLipSyncSequence ovrLipSyncSequence = OVRLipSyncSequence.CreateSequenceFromAudioClip(audioClip, offline);
 
@@ -165,15 +168,16 @@ public class LipsyncToAnim : MonoBehaviour
         Debug.Log("Conversion complete!");
     }
 
-    private static string GetGameObjectPath(Transform transform)
+    private static string GetRelativePath(Transform parent, Transform child)
     {
-        string path = transform.name;
-        while (transform.parent != null)
+        string path = child.name;
+        while (child.parent != null)
         {
-            transform = transform.parent;
-            path = transform.name + "/" + path;
+            child = child.parent;
+            if (child == parent) return path;
+            path = child.name + "/" + path;
         }
-        return path;
+        throw new KeyNotFoundException("Unable to locate parent from child");
     }
 }
-#endif
+//#endif
