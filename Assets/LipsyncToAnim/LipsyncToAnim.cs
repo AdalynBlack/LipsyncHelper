@@ -78,6 +78,8 @@ public class LipsyncToAnim : MonoBehaviour
 
         Debug.Log("Path: " + path);
 
+        if (audioClip.loadState != AudioDataLoadState.Loaded)
+            audioClip.LoadAudioData();
         OVRLipSyncSequence ovrLipSyncSequence = OVRLipSyncSequence.CreateSequenceFromAudioClip(audioClip, offline);
 
         float fps = ovrLipSyncSequence.entries.Count/ovrLipSyncSequence.length;
